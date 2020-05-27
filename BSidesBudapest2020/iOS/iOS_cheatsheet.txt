@@ -1,0 +1,69 @@
+////////////////////////////////////////////////////////////////////////////////////////////
+cheatsheet
+////////////////////////////////////////////////////////////////////////////////////////////
+
+SSH credentials:
+root/alpine
+mobile/alpine
+
+Lost password ?
+To reset the root password on your jailbroken iOS device:
+Open /etc/passwd or /private/etc/master.passwd with iFile/Fileza and change the hash to:
+/smx7MYTQIi2M
+Password will be alpine
+It should be like that:
+root:/smx7MYTQIi2M:0:0::0:0:System Administrator:/var/root:/bin/sh
+
+First thing to do when using Needle:
+1. Set IP (127.0.0.1 if connected by USB) and PORT (2222 if connected by USB otherwise 22)
+2. Launch NeedleAgent on the iDevice
+3. Toggle on the "Listen" button
+4. Test connectivity by "typing shell"; if connected you can exit and 
+5. then run the module you want
+
+List processes:
+ps -A
+
+Cycript / Frida:
+When using cycript or frida, phone must be unlocked and the analysed app in the foreground. 
+
+Space full:
+mv /System/Library/LinguisticData /var/mobile
+ln -s /var/mobile/LinguisticData/ /System/Library/
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+LAB22
+////////////////////////////////////////////////////////////////////////////////////////////
+https://developer.apple.com/library/content/qa/qa1176/_index.html#//apple_ref/doc/uid/DTS10001707-CH1-SECRVI
+
+Mac:
+1/ connect device via USB
+2/ rvictl -s UDID
+2/ (optional) sudo launchctl list com.apple.rpmuxd  (<- daemon for remote debugging of mobile devices)
+3/ wireshark -> on rvi0
+
+Get UDID:
+system_profiler SPUSBDataType | sed -n -e '/iPad/,/Serial/p;/iPhone/,/Serial/p;/iPod/,/Serial/p' | grep "Serial Number:" | awk -F ": " '{print $2}'
+81e9e294d21bf750b778c7abbb6bf83ee6dec8fd
+
+ioreg -p IOUSB -l | grep "USB Serial"
+  |   |     "USB Serial Number" = "DLC632503AVG2WFAA"
+  |         "USB Serial Number" = "81e9e294d21bf750b778c7abbb6bf83ee6dec8fd"
+
+rvictl -s 81e9e294d21bf750b778c7abbb6bf83ee6dec8fd
+rvictl -l
+rvictl -x 81e9e294d21bf750b778c7abbb6bf83ee6dec8fd
+
+Linux:
+https://github.com/gh2o/rvi_capture
+
+1/ connect device via USB
+2/ ./rvi_capture.py --udid UDID file.pcap
+3/ wireshark file.pcap
+
+Get UDID:
+lsusb -s :`lsusb | grep iPhone | cut -d ' ' -f 4 | sed 's/://'` -v | grep iSerial | awk '{print $3}'
+
+./rvi_capture.py --udid 64655621de6ef5e56a874d63f1e1bdd14f7103b1 iPhone.pcap
