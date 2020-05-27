@@ -24,5 +24,5 @@ https://drive.google.com/file/d/1r2exB-4OyBW0vRKFAPY7ls7ezX2ioXtl/view?usp=shari
 * Install the vmwares tools inside the Virtual Machine to be more comfortable:
 https://linuxconfig.org/install-vmware-tools-on-ubuntu-18-04-bionic-beaver-linux 
 	
-* Install rvi_capture
+* Install rvi_capture inside the Virtual Machine
 https://github.com/gh2o/rvi_capture
