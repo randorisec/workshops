@@ -15,9 +15,9 @@ https://drive.google.com/file/d/1r2exB-4OyBW0vRKFAPY7ls7ezX2ioXtl/view?usp=shari
   - Processors: Enable "Virtualize Intel VT-x/EPT or AMD-V/RVI" 
 
 * Download inside the Virtual Machine the following IPA:
-   - DVIA: https://raw.githubusercontent.com/randorisec/workshops/BSidesBudapest2020/iOS/master/dvia.ipa
-   - iGoat: https://raw.githubusercontent.com/randorisec/workshops/BSidesBudapest2020/iOS/master/iGoat.ipa
-   - Headbook: https://raw.githubusercontent.com/randorisec/workshops/BSidesBudapest2020/iOS/master/Headbook-v1.0.ipa
+   - DVIA: https://github.com/randorisec/workshops/blob/master/BSidesBudapest2020/iOS/dvia.ipa
+   - iGoat: https://github.com/randorisec/workshops/blob/master/BSidesBudapest2020/iOS/iGoat.ipa
+   - Headbook: https://github.com/randorisec/workshops/blob/master/BSidesBudapest2020/iOS/Headbook-v1.0.ipa
 
 * Install DVIA and iGoat on your jailbroken device using Cydia Impactor
 	
