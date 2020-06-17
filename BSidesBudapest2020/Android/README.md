@@ -6,7 +6,7 @@ For this workshop, the following requirements are needed:
 https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html
 
 * Download **MobexlerLite** virtual machine (default password: 12345)
-https://drive.google.com/file/d/1r2exB-4OyBW0vRKFAPY7ls7ezX2ioXtl/view?usp=sharing
+https://mobexler.com/download.htm
 
 * Import the OVA file using VMWare Player 15. If an error message appears sayng the OVA file didn't pass the OVF specifications, please click retry. It should work :)
 
